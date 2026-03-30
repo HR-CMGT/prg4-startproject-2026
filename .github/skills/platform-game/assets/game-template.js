@@ -25,20 +25,18 @@ export class Game extends Engine {
         const player = new Player()
         this.add(player)
 
-        // Create and add platforms
-        const platform1 = new Platform(200, 600, 300, 50) // x, y, width, height
-        const platform2 = new Platform(700, 500, 300, 50)
-        const platform3 = new Platform(400, 350, 400, 50)
-        const platformFloor = new Platform(640, 680, 1280, 40) // Floor at bottom
+        // Create and add platforms. base platform image size is 220x50 
+        const platform1 = new Platform(200, 600, 220, 50) // x, y, width, height
+        const platform2 = new Platform(700, 500, 220, 50)
+        const platform3 = new Platform(400, 350, 220, 50)
 
         this.add(platform1)
         this.add(platform2)
         this.add(platform3)
-        this.add(platformFloor)
     }
 
     onPostUpdate(){
-        // One frame has passed - put game logic here that runs every frame
+      
     }
 }
 

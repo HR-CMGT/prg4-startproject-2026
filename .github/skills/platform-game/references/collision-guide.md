@@ -22,22 +22,6 @@ onCollisionEnd(event) {
 }
 ```
 
-## Using Contact Information
-
-The collision event provides contact details:
-
-```js
-onCollisionStart(event) {
-    const contact = event.contact
-    console.log("Normal vector:", contact.normal) // Direction of collision
-    console.log("Penetration:", contact.mtv) // How much actors overlap
-}
-```
-
-The **normal vector** points away from the colliding actor. For grounding detection:
-- If `normal.y < -0.5`: Collision from above (standing on platform)
-- If `normal.y > 0.5`: Collision from below (hitting head)
-- If `normal.x > 0.5` or `normal.x < -0.5`: Side collision (wall)
 
 ## Type Checking with instanceof
 
@@ -52,24 +36,6 @@ onCollisionStart(event) {
         console.log("Hit a platform")
     } else if (event.other.owner instanceof Enemy) {
         console.log("Hit an enemy")
-    }
-}
-```
-
-## Detecting Grounding
-
-For secure jump detection:
-
-```js
-onCollisionStart(event) {
-    if (event.other.owner instanceof Platform && event.contact.normal.y < -0.5) {
-        this.isGrounded = true
-    }
-}
-
-onCollisionEnd(event) {
-    if (event.other.owner instanceof Platform) {
-        this.isGrounded = false
     }
 }
 ```

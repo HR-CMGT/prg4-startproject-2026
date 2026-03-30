@@ -54,10 +54,10 @@ export class Game extends Engine {
         const player = new Player()
         this.add(player)
         
-        // Add multiple platforms
-        const platform1 = new Platform(200, 600, 300, 50)
-        const platform2 = new Platform(700, 500, 300, 50)
-        const platform3 = new Platform(400, 350, 400, 50)
+        // Add multiple platforms, platform image size is 220x50
+        const platform1 = new Platform(200, 600, 220, 50)
+        const platform2 = new Platform(700, 500, 220, 50)
+        const platform3 = new Platform(400, 350, 220, 50)
         
         this.add(platform1)
         this.add(platform2)
@@ -83,7 +83,6 @@ import { Actor, Vector, CollisionType, Keys } from "excalibur"
 import { Resources } from './resources.js'
 
 export class Player extends Actor {
-    private isGrounded = false
 
     constructor() {
         super({
@@ -104,7 +103,7 @@ export class Player extends Actor {
         this.handleJump(engine, delta)
     }
 
-    private handleMovement(engine) {
+    handleMovement(engine) {
         let xspeed = 0
 
         if (engine.input.keyboard.isHeld(Keys.D) || engine.input.keyboard.isHeld(Keys.Right)) {
@@ -120,22 +119,14 @@ export class Player extends Actor {
         this.vel = new Vector(xspeed, this.vel.y)
     }
 
-    private handleJump(engine, delta) {
-        if (engine.input.keyboard.wasPressed(Keys.Space) && this.isGrounded) {
+    handleJump(engine, delta) {
+      if (engine.input.keyboard.wasPressed(Keys.Space) || engine.input.keyboard.wasPressed(Keys.W)) {
             this.body.applyLinearImpulse(new Vector(0, -300 * delta))
-            this.isGrounded = false
         }
     }
 
     onCollisionEnd(event) {
-        // Check if player is standing on a platform (collision from above)
-        if (event.other.owner instanceof Platform) {
-            const collisionVector = event.contact.normal
-            // If collision normal points upward, player is on a platform
-            if (collisionVector.y < -0.5) {
-                this.isGrounded = true
-            }
-        }
+
     }
 
     onPostUpdate() {

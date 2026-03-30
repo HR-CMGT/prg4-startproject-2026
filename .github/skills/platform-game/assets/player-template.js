@@ -3,8 +3,6 @@ import { Resources } from './resources.js'
 import { Platform } from './platform.js'
 
 export class Player extends Actor {
-    // Track if player is touching ground (to prevent double-jump)
-    isGrounded = false
     jumpForce = 300
 
     constructor() {
@@ -45,28 +43,18 @@ export class Player extends Actor {
     }
 
     // Handle jumping with Space
-    handleJump(engine, delta) {
-        if (engine.input.keyboard.wasPressed(Keys.Space) && this.isGrounded) {
-            this.body.applyLinearImpulse(new Vector(0, -this.jumpForce * delta))
-            this.isGrounded = false
-        }
+  handleJump(engine, delta) {
+    if (engine.input.keyboard.wasPressed(Keys.Space) || engine.input.keyboard.wasPressed(Keys.W)) {
+      this.body.applyLinearImpulse(new Vector(0, -300 * delta))
     }
+  }
 
-    // Detect when player lands on a platform
     onCollisionStart(event) {
-        if (event.other.owner instanceof Platform) {
-            // Only allow jump if collision normal points upward (standing on platform)
-            if (event.contact.normal.y < -0.5) {
-                this.isGrounded = true
-            }
-        }
+
     }
 
-    // Reset isGrounded when leaving a platform
     onCollisionEnd(event) {
-        if (event.other.owner instanceof Platform) {
-            this.isGrounded = false
-        }
+
     }
 
     onPostUpdate() {
