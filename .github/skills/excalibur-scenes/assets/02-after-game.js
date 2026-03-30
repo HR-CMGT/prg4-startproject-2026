@@ -30,17 +30,17 @@ export class GameAfter extends Engine {
         this.addScene("level2", levelTwo)
 
         // Start with the first level
-        this.goto("level1")
+        this.goToScene("level1")
     }
 
     onPostUpdate() {
         // Handle scene transitions via keyboard
         if (this.input.keyboard.wasPressed(Keys.N)) {
-            this.goto("level2")
+            this.goToScene("level2")
         }
 
         if (this.input.keyboard.wasPressed(Keys.P)) {
-            this.goto("level1")
+            this.goToScene("level1")
         }
     }
 }

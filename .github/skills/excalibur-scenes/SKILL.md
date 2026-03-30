@@ -156,17 +156,17 @@ export class Game extends Engine {
         this.addScene("level2", levelTwo)
 
         // Start with level 1
-        this.goto("level1")
+        this.goToScene("level1")
     }
 
     onPostUpdate() {
         // Listen for scene transitions (e.g., press 'N' for next level)
         if (this.input.keyboard.wasPressed(Keys.N)) {
-            this.goto("level2")
+            this.goToScene("level2")
         }
 
         if (this.input.keyboard.wasPressed(Keys.P)) {
-            this.goto("level1")
+            this.goToScene("level1")
         }
     }
 }
@@ -207,7 +207,7 @@ onPostUpdate(engine) {
     if (this.player.pos.x > 1200) {
         console.log("Level complete!")
         // Switch to next scene
-        engine.goto("level2")
+        engine.goToScene("level2")
     }
 }
 ```
@@ -242,7 +242,7 @@ export class MenuScene extends Scene {
 
     onPostUpdate(engine) {
         if (engine.input.keyboard.wasPressed(Keys.Space)) {
-            engine.goto("level1")
+            engine.goToScene("level1")
         }
     }
 }
