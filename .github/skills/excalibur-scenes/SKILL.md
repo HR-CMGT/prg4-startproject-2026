@@ -48,10 +48,9 @@ export class SceneLevelOne extends Scene {
     
     onInitialize(engine) {
         // This runs once when scene is created
-        this.add(new Platform(200, 600, 300, 50))
-        this.add(new Platform(700, 500, 300, 50))
-        this.add(new Platform(400, 350, 400, 50))
-        this.add(new Platform(640, 680, 1280, 40))
+        this.add(new Platform(200, 600, 220, 50))
+        this.add(new Platform(700, 500, 220, 50))
+        this.add(new Platform(400, 350, 220, 50))
     }
 
     onActivate(engine) {
