@@ -25,7 +25,9 @@
 
 ### AI Instructies
 
-Als je copilot binnen dit project gebruikt zullen de [Excalibur instructions](./.github/copilot-instructions.md) en skills automatisch meegenomen worden. Je kan *skills* gebruiken door een `/` te typen, bv. voor het bouwen van een platform game of het toevoegen van scenes.
+Als je copilot binnen dit project gebruikt zullen de [Excalibur instructions](./.github/copilot-instructions.md) en skills automatisch meegenomen worden. Dit kan je zien door in het AI venster op settings te klikken. 
 
 <img width="550px" src="./public/images/excalibur-ai-skills.png">
+
+Je kan *skills* gebruiken door een `/` te typen, bv. voor het bouwen van een platform game of het toevoegen van scenes.
 
