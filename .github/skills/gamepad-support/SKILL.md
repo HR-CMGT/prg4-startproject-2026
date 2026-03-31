@@ -141,4 +141,4 @@ onPreUpdate(engine) {
 
 ## References
 
-See [gamepad snippets](../../snippets/gamepad.md) for additional patterns and advanced usage like button events and manual gamepad detection.
+See [gamepad snippets](../../../snippets/gamepad.md) for additional patterns and advanced usage like button events and manual gamepad detection.
