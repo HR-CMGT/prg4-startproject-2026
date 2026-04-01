@@ -49,10 +49,10 @@ onPreUpdate(engine) {
     let moveY = 0
     
     // Keyboard input (existing)
-    if (engine.input.keyboard.isHeld(Input.Keys.W)) moveY -= 1
-    if (engine.input.keyboard.isHeld(Input.Keys.S)) moveY += 1
-    if (engine.input.keyboard.isHeld(Input.Keys.A)) moveX -= 1
-    if (engine.input.keyboard.isHeld(Input.Keys.D)) moveX += 1
+    if (engine.input.keyboard.isHeld(Keys.W)) moveY -= 1
+    if (engine.input.keyboard.isHeld(Keys.S)) moveY += 1
+    if (engine.input.keyboard.isHeld(Keys.A)) moveX -= 1
+    if (engine.input.keyboard.isHeld(Keys.D)) moveX += 1
     
     // Gamepad input (new)
     if (engine.mygamepad) {
