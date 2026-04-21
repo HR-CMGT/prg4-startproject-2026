@@ -1,7 +1,7 @@
 # Excalibur Startproject 2026
 
 - Ga naar [https://github.com/HR-CMGT/prg4-startproject-2026](https://github.com/HR-CMGT/prg4-startproject-2026)
-- Klik op ***CODE > USE THIS TEMPLATE***. Dit kopieert het project naar jouw eigen github.
+- Klik op ***USE THIS TEMPLATE > CREATE A NEW REPOSITORY***. Dit kopieert het project naar jouw eigen github.
 - Vanaf je *eigen github* kopieer je de `git url` (onder de "code" button).
 - Open VS Code. Klik op "file" > "clone repository" > plak hier je url.
 - Typ `npm install` en `npm run dev` in de terminal in VS Code. Dit start de development omgeving van Vite.
