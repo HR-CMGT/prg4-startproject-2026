@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --outDir=docs --base=./"
+    "build": "vite build --outDir=docs --base=./",
+    "preview": "vite preview --outDir docs"
   },
   "devDependencies": {
     "vite": "^8.0.1"
